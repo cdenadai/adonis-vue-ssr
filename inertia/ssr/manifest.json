@@ -1,3 +1,5 @@
 {
-  "ssr/ssr.js": "autossr.js"
+  "ssr/ssr.css": "autossr.css",
+  "ssr/ssr.js": "autossr.js",
+  "ssr/images/Logo.svg": "autoimages/Logo.8fdacca0.svg"
 }

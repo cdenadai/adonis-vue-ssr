@@ -1,0 +1,1 @@
+{"version":3,"file":"DashboardController.js","sourceRoot":"","sources":["../../../../app/Controllers/Http/DashboardController.ts"],"names":[],"mappings":";;AAEA,MAAqB,mBAAmB;IAEpC,KAAK,CAAC,KAAK,CAAC,EAAE,OAAO,EAAE;QACnB,OAAO,OAAO,CAAC,MAAM,CAAC,WAAW,EAAE;YAC/B,KAAK,EAAE,WAAW;YAClB,OAAO,EAAE,2BAA2B;SACvC,CAAC,CAAC;IACP,CAAC;CACJ;AARD,sCAQC"}

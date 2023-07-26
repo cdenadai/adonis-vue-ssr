@@ -31,5 +31,7 @@ Server_1.default.middleware.register([
     () => Promise.resolve().then(() => __importStar(global[Symbol.for('ioc.use')]("Adonis/Core/BodyParser"))),
     () => Promise.resolve().then(() => __importStar(global[Symbol.for('ioc.use')]("EidelLev/Inertia/Middleware")))
 ]);
-Server_1.default.middleware.registerNamed({});
+Server_1.default.middleware.registerNamed({
+    auth: () => Promise.resolve().then(() => __importStar(global[Symbol.for('ioc.use')]('App/Middleware/Auth')))
+});
 //# sourceMappingURL=kernel.js.map

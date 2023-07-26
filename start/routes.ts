@@ -19,14 +19,25 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import HealthCheck from '@ioc:Adonis/Core/HealthCheck'
 
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
 
-Route.get("/home", async ({ inertia }) => {
-  return inertia.render("Home", {
-    title: "Home",
-    message: "Hello World Vue On Adonis",
-  });
-});
+Route.group(() => {
+  Route.get('/login', 'SessionController.login').as('login')
+  Route.post('/authenticate', 'SessionController.authenticate').as('authenticate')
+})
+
+Route.group(() => {
+  Route.get('/dashboard', 'DashboardController.index').as('dashboard')
+}).middleware('auth')
+
+Route.get('health', async ({ response }) => {
+  const report = await HealthCheck.getReport()
+
+  return report.healthy
+    ? response.ok(report)
+    : response.badRequest(report)
+})
